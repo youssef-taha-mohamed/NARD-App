@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nard/component/constant.dart';
 import 'package:nard/moduls/i_key.dart';
 
 class NotificationScreen extends StatefulWidget {
@@ -16,13 +17,15 @@ class _NotificationScreenState extends State<NotificationScreen> {
         title: Text(TKeys.notification.translate(context),style: TextStyle(color: Theme.of(context).colorScheme.scrim),),
         shadowColor: Colors.grey,
         elevation: 1,
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.onPrimary,
       ),
-      body:const Center(
+      body:Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("لا يوجد إشعارات حتي الاًن",style: TextStyle(fontWeight: FontWeight.bold),)
+            Image.asset("assets/images/hand.png"),
+            spaceHeightL,
+            Text(TKeys.noNotification.translate(context),style: TextStyle(fontWeight: FontWeight.bold),)
           ],
         ),
       ),

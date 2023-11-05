@@ -63,6 +63,7 @@ enum TKeys{
   hosting,
   vPNHosting,
   mobileApp,
+  noNotification,
 }
 
 extension TKeysExtention on TKeys{

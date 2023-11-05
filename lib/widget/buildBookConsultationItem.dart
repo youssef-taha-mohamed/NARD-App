@@ -61,12 +61,13 @@ class BuildPortfolioItem extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                       minimumSize: Size(MediaQuery.of(context).size.width * .38,
                           MediaQuery.of(context).size.height * 0.05),
-                      backgroundColor: Colors.white,
+                      backgroundColor: Theme.of(context).colorScheme.secondary,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       )),
                   onPressed: () {},
-                  child: buildTextBold("Learn More", context)),
+                  child: Text("Learn More",style: TextStyle(color: Theme.of(context).colorScheme.scrim),)
+              ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     minimumSize: Size(MediaQuery.of(context).size.width*.38, MediaQuery.of(context).size.height*0.05),
@@ -76,7 +77,7 @@ class BuildPortfolioItem extends StatelessWidget {
                     )
                 ),
                 onPressed: () {},
-                child: buildTextBold("Book Now", context),
+                child: Text("Book Now",style: TextStyle(color: Theme.of(context).colorScheme.scrim),),
               ),
             ],
           )

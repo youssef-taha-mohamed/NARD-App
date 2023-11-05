@@ -47,6 +47,16 @@ enum TKeys{
   comment,
   note,
   notification,
+  webDesign,
+  brandIdentity,
+  webMaintenance,
+  seo,
+  google,
+  emailMarketing,
+  node,
+  wordPress,
+  ios,
+  android,
 }
 
 extension TKeysExtention on TKeys{

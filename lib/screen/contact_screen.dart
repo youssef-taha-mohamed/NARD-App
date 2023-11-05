@@ -1,3 +1,4 @@
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import '../component/constant.dart';
 import '../moduls/i_key.dart';
@@ -57,10 +58,14 @@ class ContactScreenState extends State<ContactScreen> {
           ),
           spaceHeightL,
           Text(TKeys.services.translate(context)),
-          createTextField(
-            controller: serviceController,
-            inputType: TextInputType.text,
-            context: context,
+          DropdownSearch<String>.multiSelection(
+            items: [TKeys.ecommerce.translate(context), TKeys.webDesign.translate(context), TKeys.brandIdentity.translate(context), TKeys.webMaintenance.translate(context),TKeys.seo.translate(context),TKeys.socialMedia.translate(context),TKeys.google.translate(context),TKeys.emailMarketing.translate(context),TKeys.saudi.translate(context),TKeys.node.translate(context),TKeys.wordPress.translate(context),TKeys.android.translate(context),TKeys.ios.translate(context),TKeys.flutterApp.translate(context)],
+            popupProps: PopupPropsMultiSelection.menu(
+              showSelectedItems: true,
+              disabledItemFn: (String s) => s.startsWith('I'),
+            ),
+            onChanged: print,
+            //selectedItems: ["Brazil"],
           ),
           spaceHeightL,
           Text(TKeys.description.translate(context)),

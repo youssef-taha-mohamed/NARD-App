@@ -57,6 +57,12 @@ enum TKeys{
   wordPress,
   ios,
   android,
+  ourService,
+  websiteDevelopment,
+  digitalMarketing,
+  hosting,
+  vPNHosting,
+  mobileApp,
 }
 
 extension TKeysExtention on TKeys{

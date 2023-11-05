@@ -165,7 +165,7 @@ Card buildItemPopular(
         borderRadius: BorderRadius.circular(15),
         color: Theme.of(context).colorScheme.onPrimary,
       ),
-      padding: const EdgeInsets.only(top: 10, left: 20, bottom: 20),
+      padding: const EdgeInsets.only(top: 10, left: 20, bottom: 20,right: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -181,6 +181,7 @@ Card buildItemPopular(
                 title,
                 style: TextStyle(
                     color: Theme.of(context).colorScheme.scrim,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold),
               )
             ],

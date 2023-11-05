@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nard/moduls/i_key.dart';
 
 import '../component/constant.dart';
 
@@ -9,7 +10,7 @@ class OurServices extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Our Services"),
+        title: Text(TKeys.ourService.translate(context),style: TextStyle(color: Theme.of(context).colorScheme.scrim,fontSize: 17),),
       ),
       body: ListView(
         padding:const EdgeInsets.all(5),
@@ -17,38 +18,38 @@ class OurServices extends StatelessWidget {
           buildItemPopular(
             context,
             "assets/images/one.png",
-            "Website Development",
-            "Ecommerce",
-            "Web Design",
-            "Brand Identity",
-            "Web Maintenance",
+            TKeys.websiteDevelopment.translate(context),
+            TKeys.ecommerce.translate(context),
+            TKeys.webDesign.translate(context),
+            TKeys.brandIdentity.translate(context),
+            TKeys.webMaintenance.translate(context),
           ),
           buildItemPopular(
             context,
             "assets/images/two.webp",
-            "Digital Marketing",
-            "SEO",
-            "Social Media",
-            "Google Ads",
-            "Email Marketing",
+            TKeys.digitalMarketing.translate(context),
+            TKeys.seo.translate(context),
+            TKeys.socialMedia.translate(context),
+            TKeys.google.translate(context),
+            TKeys.emailMarketing.translate(context),
           ),
           buildItemPopular(
             context,
             "assets/images/photo.png",
-            "Hosting",
-            "Saudi Hosting",
-            "Node.js Hosting",
-            "WordPress Hosting",
-            "VPN Hosting",
+            TKeys.hosting.translate(context),
+            TKeys.saudi.translate(context),
+            TKeys.node.translate(context),
+            TKeys.wordPress.translate(context),
+            TKeys.vPNHosting.translate(context),
           ),
           buildItemPopular(
             context,
             "assets/images/four.webp",
-            "Mobile App",
-            "Android",
-            "IOS App",
-            "Flutter App",
-             '',
+            TKeys.mobileApp.translate(context),
+            TKeys.android.translate(context),
+            TKeys.ios.translate(context),
+            TKeys.flutterApp.translate(context),
+            '',
           ),
         ],
       ),

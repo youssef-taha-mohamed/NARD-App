@@ -53,7 +53,22 @@ class ContactScreenState extends State<ContactScreen> {
               lines: 1,
               length: 14,
               type: TextInputType.phone),
-          Text(TKeys.services.translate(context)),
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: TKeys.services.translate(context),
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.scrim,
+                  ),
+                ),
+                TextSpan(text: '*', style: TextStyle(color: Colors.red,fontSize: 15)),
+              ],
+            ),
+          ),
+          spaceHeightVS,
           DropdownSearch<String>.multiSelection(
             items: [TKeys.ecommerce.translate(context), TKeys.webDesign.translate(context), TKeys.brandIdentity.translate(context), TKeys.webMaintenance.translate(context),TKeys.seo.translate(context),TKeys.socialMedia.translate(context),TKeys.google.translate(context),TKeys.emailMarketing.translate(context),TKeys.saudi.translate(context),TKeys.node.translate(context),TKeys.wordPress.translate(context),TKeys.android.translate(context),TKeys.ios.translate(context),TKeys.flutterApp.translate(context)],
             popupProps: PopupPropsMultiSelection.menu(

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-
 class CustomTextField extends StatelessWidget {
-
   final TextEditingController controllerName;
   final int lines;
   final int length;
@@ -11,11 +9,11 @@ class CustomTextField extends StatelessWidget {
 
   const CustomTextField(
       {super.key,
-        required this.title,
-        required this.length,
-        required this.controllerName,
-        required this.lines,
-        required this.type});
+      required this.title,
+      required this.length,
+      required this.controllerName,
+      required this.lines,
+      required this.type});
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +23,15 @@ class CustomTextField extends StatelessWidget {
         RichText(
           text: TextSpan(
             children: [
-              TextSpan(text: title,),
-              TextSpan(text: '*', style: TextStyle(color: Colors.red)),
+              TextSpan(
+                text: title,
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.scrim,
+                ),
+              ),
+              TextSpan(text: '*', style: TextStyle(color: Colors.red,fontSize: 15)),
             ],
           ),
         ),
@@ -43,46 +48,39 @@ class CustomTextField extends StatelessWidget {
               focusColor: Colors.amber,
               fillColor: Theme.of(context).colorScheme.onPrimary,
               contentPadding:
-              const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
               filled: true,
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(
-                      color: Colors.yellow
-                  )
-              ),
+                  borderSide: BorderSide(color: Colors.yellow)),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide(
                     color: Colors.grey,
-                  )
-              )
-          ),
+                  ))),
         ),
       ],
     );
   }
 }
 
-
-Widget createTextField({
-  required TextEditingController controller,
-  required TextInputType inputType,
-  ValueChanged<String>? onSubmit,
-  ValueChanged<String>? onChange,
-  //required FormFieldValidator<String>? validator,
-  String? label,
-  //required IconData prefixIcon,
-  IconData? suffix,
-  bool isPassword = false,
-  VoidCallback? suffixPressed,
-  GestureTapCallback? onTab,
-  bool isClickable = true,
-  int? maxLength,
-  TextDirection? textDirection,
-  int maxLines = 1,
-  required BuildContext context
-}) =>
+Widget createTextField(
+        {required TextEditingController controller,
+        required TextInputType inputType,
+        ValueChanged<String>? onSubmit,
+        ValueChanged<String>? onChange,
+        //required FormFieldValidator<String>? validator,
+        String? label,
+        //required IconData prefixIcon,
+        IconData? suffix,
+        bool isPassword = false,
+        VoidCallback? suffixPressed,
+        GestureTapCallback? onTab,
+        bool isClickable = true,
+        int? maxLength,
+        TextDirection? textDirection,
+        int maxLines = 1,
+        required BuildContext context}) =>
     TextFormField(
       autofocus: false,
       cursorColor: Colors.black,
@@ -98,7 +96,8 @@ Widget createTextField({
       decoration: InputDecoration(
         focusColor: Colors.amber,
         fillColor: Theme.of(context).colorScheme.onPrimary,
-        contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
         filled: true,
         hintText: label,
         border: OutlineInputBorder(
@@ -107,15 +106,13 @@ Widget createTextField({
         //prefixIcon: Icon(prefixIcon),
         suffixIcon: suffix != null
             ? IconButton(
-          icon: Icon(
-            suffix,
-          ),
-          onPressed: suffixPressed,
-        )
+                icon: Icon(
+                  suffix,
+                ),
+                onPressed: suffixPressed,
+              )
             : null,
       ),
       maxLength: maxLength,
       textDirection: textDirection,
     );
-
-

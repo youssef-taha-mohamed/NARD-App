@@ -22,8 +22,6 @@ class ContactScreenState extends State<ContactScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.onPrimary,
-        elevation: 1,
         title: Text(TKeys.contactUs.translate(context),style: TextStyle(fontSize:17,color: Theme.of(context).colorScheme.scrim),),
       ),
       body: ListView(
@@ -36,27 +34,25 @@ class ContactScreenState extends State<ContactScreen> {
           const SizedBox(
             height: 25,
           ),
-          Text(TKeys.fullName.translate(context)),
-          createTextField(
-            controller: nameController,
-            inputType: TextInputType.text,
-              context: context,
+          CustomTextField(
+            title: TKeys.fullName.translate(context),
+            controllerName: nameController,
+            lines: 1,
+            type: TextInputType.text,
+            length: 20,
           ),
-          spaceHeightL,
-          Text(TKeys.email.translate(context)),
-          createTextField(
-            controller: emailController,
-            inputType: TextInputType.emailAddress,
-              context: context,
-          ),
-          spaceHeightL,
-          Text(TKeys.mobile.translate(context)),
-          createTextField(
-            controller: mobileController,
-            inputType: TextInputType.phone,
-            context: context,
-          ),
-          spaceHeightL,
+          CustomTextField(
+              title: TKeys.email.translate(context),
+              controllerName: emailController,
+              lines: 1,
+              length: 20,
+              type: TextInputType.emailAddress),
+          CustomTextField(
+              title: TKeys.mobile.translate(context),
+              controllerName: mobileController,
+              lines: 1,
+              length: 14,
+              type: TextInputType.phone),
           Text(TKeys.services.translate(context)),
           DropdownSearch<String>.multiSelection(
             items: [TKeys.ecommerce.translate(context), TKeys.webDesign.translate(context), TKeys.brandIdentity.translate(context), TKeys.webMaintenance.translate(context),TKeys.seo.translate(context),TKeys.socialMedia.translate(context),TKeys.google.translate(context),TKeys.emailMarketing.translate(context),TKeys.saudi.translate(context),TKeys.node.translate(context),TKeys.wordPress.translate(context),TKeys.android.translate(context),TKeys.ios.translate(context),TKeys.flutterApp.translate(context)],
@@ -68,14 +64,13 @@ class ContactScreenState extends State<ContactScreen> {
             //selectedItems: ["Brazil"],
           ),
           spaceHeightL,
-          Text(TKeys.description.translate(context)),
-          createTextField(
-              controller: desController,
-              inputType: TextInputType.text,
-              maxLines: 5,
-              maxLength: 500,
-            context: context,
-          ),
+          CustomTextField(
+              title: TKeys.description.translate(context),
+              controllerName: desController,
+              lines: 6,
+              length: 500,
+              type: TextInputType.text),
+
           ElevatedButton(
             style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).colorScheme.secondary,

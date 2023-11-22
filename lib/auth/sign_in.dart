@@ -14,8 +14,8 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          titleTextStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.normal),
-          title: buildTextBold(TKeys.signIn.translate(context), context),
+          //titleTextStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.normal),
+          title: Text(TKeys.signIn.translate(context)),
           leading: InkWell(
             child: const Icon(Icons.close),
             onTap: () {
@@ -63,7 +63,14 @@ class LoginScreen extends StatelessWidget {
             spaceHeightL,
             TextButton(
               onPressed: () {},
-              child:Text(TKeys.forget.translate(context),style: TextStyle(fontSize: 17),),
+              style: TextButton.styleFrom(
+                  alignment: Alignment.topRight
+              ),
+              child: Text(
+                TKeys.forget.translate(context),
+                style: TextStyle(fontSize: 17),
+                textAlign: TextAlign.end,
+              ),
             ),
           ],
         ));

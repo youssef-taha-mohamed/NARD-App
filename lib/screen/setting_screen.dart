@@ -16,7 +16,7 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(TKeys.setting.translate(context),style: TextStyle(fontSize:17,color: Theme.of(context).colorScheme.scrim),),
+        title: Text(TKeys.setting.translate(context)),
         leading: IconButton(
           onPressed: () {
             context.pop();

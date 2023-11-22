@@ -18,10 +18,8 @@ class _BookConsultationState extends State<BookConsultation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shadowColor: Colors.grey,
         title: Text(
           TKeys.bookConsultation.translate(context),
-          style: TextStyle(fontSize:17,color: Theme.of(context).colorScheme.scrim),
         ),
         leading: IconButton(
           onPressed: () {
@@ -32,7 +30,6 @@ class _BookConsultationState extends State<BookConsultation> {
       ),
       body: Scaffold(
         appBar: AppBar(
-          shadowColor: Colors.grey,
           leading: Padding(
             padding: const EdgeInsets.only(left: 8.0),
             child: Image.asset("assets/images/unnamed.webp",width: 35,height: 35,),

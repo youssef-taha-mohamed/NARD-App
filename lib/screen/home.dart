@@ -38,7 +38,6 @@ class _HomeState extends State<Home> {
               children: [
                 Text(
                   TKeys.hi.translate(context),
-                  style: TextStyle(color:Theme.of(context).colorScheme.scrim, fontSize: 22),
                 ),
                 const SizedBox(width: 9,),
                 Image.asset("assets/images/hand.png",cacheWidth: 35,),

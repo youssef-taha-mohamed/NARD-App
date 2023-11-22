@@ -10,7 +10,7 @@ class OurServices extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(TKeys.ourService.translate(context),style: TextStyle(color: Theme.of(context).colorScheme.scrim,fontSize: 17),),
+        title: Text(TKeys.ourService.translate(context)),
       ),
       body: ListView(
         padding:const EdgeInsets.all(5),

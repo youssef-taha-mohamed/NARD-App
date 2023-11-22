@@ -10,7 +10,6 @@ class MoreDetailsPortfolio extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           TKeys.portfolio.translate(context),
-          style: TextStyle(color: Theme.of(context).colorScheme.scrim),
         )
       ),
       body: SizedBox(

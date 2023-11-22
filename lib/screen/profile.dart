@@ -16,9 +16,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        titleTextStyle: TextStyle(fontSize:17,fontWeight: FontWeight.normal),
-        elevation: 1,
-        title: buildTextBold(TKeys.myAccount.translate(context),context),
+        title: Text(TKeys.myAccount.translate(context)),
       ),
       body: ListView(
         padding:const EdgeInsets.all(15),
